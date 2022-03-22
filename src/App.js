@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+
+import { Header } from './components/Header/Header';
+import Main from './components/Main/Main';
+
 
 function App() {
+  const [launch, setLaunch] = useState([])
+  const [event, setEvent] = useState([])
+  const [station, setStation] = useState([])
+
+    const getData = async () => {
+        const res = await axios.get('https://lldev.thespacedevs.com/2.2.0/launch/upcoming');
+        const res1 = await axios.get('https://lldev.thespacedevs.com/2.2.0/event/upcoming');
+        const res2 = await axios.get('https://lldev.thespacedevs.com/2.2.0/spacestation');
+        setLaunch(res.data.results)
+        setEvent(res1.data.results)
+        setStation(res2.data.results)
+    }
+    useEffect(() => {
+        getData()
+    },[])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Header/>
+        <Main
+          events={event}
+          launch={launch}
+        />
+
+      </Router>
+    </>
   );
 }
 
