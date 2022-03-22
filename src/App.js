@@ -29,6 +29,7 @@ function App() {
         <Main
           events={event}
           launch={launch}
+          space={station}
         />
 
       </Router>

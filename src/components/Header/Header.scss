@@ -1,0 +1,15 @@
+.header {
+    background-color: #0d3749;
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 10px;
+        &--logo {
+            
+            &__img {
+                width: 200px;
+            }
+        }
+    }
+}

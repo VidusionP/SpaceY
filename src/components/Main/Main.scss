@@ -1,0 +1,19 @@
+.main {
+    background-color: #000d16;
+    color: aliceblue;
+    &__news {
+        width: 90%;
+        margin: auto;
+        &--section {
+            background-color: #0d3749;
+            &__card {
+                background-color: #000d16;
+                width: 90%;
+                margin: auto;
+                &--img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
