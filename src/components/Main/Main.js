@@ -69,7 +69,7 @@ export default function Main(props) {
                 <button>SEE MORE</button>
             </div>
         </div>
-        <div>
+        <div className='main__station'>
             <h1>SPACESTATIONS</h1>
             <div>
                 {res2.map((item,i ) => {
