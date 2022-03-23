@@ -35,7 +35,7 @@ export default function Main(props) {
                 <button>SEE MORE</button>
             </div>
         </div>
-        <div>
+        <div className='main__space'>
             <h1>SPACE LAUNCHES</h1>
             <div>
                 {res1.map((item,i ) => {
