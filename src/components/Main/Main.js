@@ -6,9 +6,10 @@ export default function Main(props) {
     const res = props.events.filter(word => props.events.indexOf(word) < 2)
     // console.log (res)
     const res1 = props.launch.filter(word => props.launch.indexOf(word) < 2)
-    // console.log (res1)
+    console.log (res1)
     const res2 = props.space.filter(word => props.space.indexOf(word) < 2)
-    console.log (res2)
+    // console.log (res2)
+    const [on, setOn] = useState(false)
   return (
     <div className='main'>
         <div className='main__news'>
@@ -17,48 +18,51 @@ export default function Main(props) {
                 {res.map((item,i ) => {
                         return (
                             <div className='main__news--section__card'>
+                                {/* <span className='main__hover'></span> */}
                                 <img className='main__news--section__card--img' src={item.feature_image}/>
-                                <div>
-                                    <h3>{item.date}</h3>
-                                    <h3>{item.name}</h3>
+                                <div className='main__news--section__card--div'>
+                                    <h3 className='main__news--section__card--date'>{new Date(item.date).toDateString()}</h3>
+                                    <h3 className='main__news--section__card--title'>{item.name}</h3>
                                     <div>
-                                        <div>{item.location}</div>
-                                        {item.expeditions[0] ? <div>{item.expeditions[0].name}</div> : ''}
+                                        <div className='main__news--section__card--loc'>{item.location}</div>
+                                        {item.expeditions[0] ? <div className='main__news--section__card--exp'>{item.expeditions[0].name}</div> : ''}
     
-                                        {item.spacestations[0] ? <div>{item.spacestations[0].name}</div> : ''}
+                                        {item.spacestations[0] ? <div className='main__news--section__card--ss'>{item.spacestations[0].name}</div> : ''}
                                     </div>
                                 </div>
                             </div>
                         )
                 })}
                 <div></div>
-                <button>SEE MORE</button>
+                <button className='main__button'>SEE MORE</button>
             </div>
         </div>
         <div className='main__space'>
             <h1>SPACE LAUNCHES</h1>
-            <div>
+            <div className='main__space--section'>
                 {res1.map((item,i ) => {
                         return (
-                            <div>
-                                <div>
-                                    <div>
-                                        {/* <div><img src={item.image}/></div> */}
-                                        <div>
-                                            <h3>{item.name}</h3>
-                                            <p>{item.launch_service_provider.name} | {item.pad.location.country_code}</p>
-                                            <p>{item.pad.location.name}</p>
-                                            <p>{item.net}</p>
+                            <div className='main__space--section__card'>
+                                <div className='main__space--section__card--top'>
+                                        <div className='main__space--section__card--top__div'>
+                                            <img className='main__space--section__card--top__img' src={item.image}/>
+                                            </div>
+                                        <div className='main__space--section__card--top__div2'>
+                                            <h3 className='main__space--section__card--top__title'>{item.name}</h3>
+                                            <p className='main__space--section__card--top__name'>{item.launch_service_provider.name} | {item.pad.location.country_code}</p>
+                                            <p className='main__space--section__card--top__pad'>{item.pad.location.name}</p>
+                                            <p className='main__space--section__card--top__date'>{new Date(item.net).toDateString()}</p>
+                                            {/* <p className='main__space--section__card--top__date'>{new Date(item.net).getDate()}</p> */}
                                         </div>
                                     </div>
-                                </div>
-                                <div>
-                                    <h3>Status: {item.status.name}</h3>
-                                    <h3>Mission: </h3>
-                                    <p>{item.mission.description}</p>
-                                    <div>
-                                        {item.mission.orbit ? <div>{item.mission.orbit.name}</div>: '' }
-                                        {item.pad.name ? <div>{item.pad.name}</div>: '' }
+                                
+                                <div className='main__space--section__card--bot'>
+                                    <h3 className='main__space--section__card--bot__status'>Status: {item.status.name}</h3>
+                                    <h3 className='main__space--section__card--bot__miss'>Mission: </h3>
+                                    {item.mission ? <p className='main__space--section__card--bot__desc'>{item.mission.description}</p>: 'TBD'}
+                                    <div className='main__space--section__card--bot__bot'>
+                                        {item.mission ? <div className='main__space--section__card--bot__bot--1'>{item.mission.orbit.name}</div>: '' }
+                                        {item.pad.name ? <div className='main__space--section__card--bot__bot--2'>{item.pad.name}</div>: '' }
                                         
                                     </div>
                                 </div>
