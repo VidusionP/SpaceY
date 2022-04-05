@@ -24,7 +24,7 @@
         width: 90%;
         margin: auto;
         &--title {
-            padding: 20px 0;
+            padding: 30px 0;
         }
         &--section {
             background-color: #0d3749;
@@ -33,6 +33,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            box-shadow: 0 4px 8px 0 #47525d, 0 6px 10px 0 #55aaff74;
             &__card {
                 background-color: #000d16;
                 border-radius: 10px;
@@ -47,11 +48,12 @@
                 }
                 &--date {
                     color: rgb(148, 148, 148);
-                    font-size: 1rem;
+                    font-size: 12px;
                     margin: 0;
                 }
                 &--title {
                     text-align: center;
+                    padding: 10px 0;
                 }
                 &--div {
                     padding: 15px 10px;
@@ -61,6 +63,7 @@
                     border-radius: 20px;
                     width: fit-content;
                     padding: 5px 10px;
+                    font-size: 12px;
                 }
                 &--exp {
                     background-color: rgb(49, 152, 35);
@@ -68,12 +71,14 @@
                     width: fit-content;
                     padding: 5px 10px;
                     margin: 5px 0;
+                    font-size: 12px;
                 }
                 &--ss {
                     background-color: rgb(152, 35, 66);
                     border-radius: 20px;
                     width: fit-content;
                     padding: 5px 10px;
+                    font-size: 12px;
                 }
             }
         }
@@ -88,6 +93,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            box-shadow: 0 4px 8px 0 #47525d, 0 6px 10px 0 #55aaff74;
+            margin-bottom: 30px;
             &__card {
                 background-color: #000d16;
                 border-radius: 10px;
@@ -138,9 +145,34 @@
                 &--bot {
                     &__status {
                         padding: 5px 0;
+                        border-bottom: 1px solid white;
+                    }
+                    &__desc {
+                        font-style: italic;
+                        font-size: 13px;
+                        padding: 5px 0;
+                    }
+                    &__miss {
+                        margin-top: 5px;
                     }
                     &__bot {
                         padding: 5px 0;
+                    
+                        &--1 {
+                            background-color: rgb(152, 35, 66);
+                    border-radius: 20px;
+                    width: fit-content;
+                    padding: 5px 10px;
+                    font-size: 12px;
+                        }
+                        &--2 {
+                            background-color: rgb(49, 152, 35);
+                    border-radius: 20px;
+                    width: fit-content;
+                    padding: 5px 10px;
+                    margin: 5px 0;
+                    font-size: 12px;
+                        }
                     }
                 }
             }

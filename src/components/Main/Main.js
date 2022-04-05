@@ -6,7 +6,7 @@ export default function Main(props) {
     const res = props.events.filter(word => props.events.indexOf(word) < 2)
     // console.log (res)
     const res1 = props.launch.filter(word => props.launch.indexOf(word) < 2)
-    console.log (res1)
+    // console.log (res1)
     const res2 = props.space.filter(word => props.space.indexOf(word) < 2)
     // console.log (res2)
     const [on, setOn] = useState(false)
@@ -38,7 +38,7 @@ export default function Main(props) {
             </div>
         </div>
         <div className='main__space'>
-            <h1>SPACE LAUNCHES</h1>
+            <h1 className='main__news--title'>SPACE LAUNCHES</h1>
             <div className='main__space--section'>
                 {res1.map((item,i ) => {
                         return (
@@ -59,7 +59,7 @@ export default function Main(props) {
                                 <div className='main__space--section__card--bot'>
                                     <h3 className='main__space--section__card--bot__status'>Status: {item.status.name}</h3>
                                     <h3 className='main__space--section__card--bot__miss'>Mission: </h3>
-                                    {item.mission ? <p className='main__space--section__card--bot__desc'>{item.mission.description}</p>: 'TBD'}
+                                    {item.mission ? <p className='main__space--section__card--bot__desc'>{item.mission.description}</p>: <p className='main__space--section__card--bot__desc'>TBD</p>}
                                     <div className='main__space--section__card--bot__bot'>
                                         {item.mission ? <div className='main__space--section__card--bot__bot--1'>{item.mission.orbit.name}</div>: '' }
                                         {item.pad.name ? <div className='main__space--section__card--bot__bot--2'>{item.pad.name}</div>: '' }
@@ -70,11 +70,11 @@ export default function Main(props) {
                         )
                 })}
                 <div></div>
-                <button>SEE MORE</button>
+                <button className='main__button'>SEE MORE</button>
             </div>
         </div>
-        <div className='main__station'>
-            <h1>SPACESTATIONS</h1>
+        {/* <div className='main__station'>
+            <h1 className='main__news--title'>SPACESTATIONS</h1>
             <div>
                 {res2.map((item,i ) => {
                         return (
@@ -85,14 +85,14 @@ export default function Main(props) {
                                     <p>Status: {item.status.name}</p>
                                     <p>Owner: {item.owners[0].name}</p>
                                 </div>
-                                {/* <div><img src={item.image_url}/></div> */}
+                                <div><img src={item.image_url}/></div>
                             </div>
                         )
                 })}
                 <div></div>
-                <button>SEE MORE</button>
+                <button className='main__button'>SEE MORE</button>
             </div>
-        </div>
+        </div> */}
     </div>
   )
 }
