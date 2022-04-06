@@ -4,6 +4,11 @@
     background-color: #000d16;
     color: aliceblue;
     font-family: Arial, Helvetica, sans-serif;
+    @include desktop {
+        display: flex;
+        // margin: auto;
+        justify-content: center;
+    }
     &__button {
         background-color: #228dda;
         border: unset;
@@ -29,6 +34,10 @@
         @include tablet {
             // width: ;
         }
+        @include desktop {
+            margin: unset;
+            margin-bottom: 5vw;
+        }
         &--title {
             padding: 30px 0;
         }
@@ -44,6 +53,7 @@
             margin: auto;
             @include tablet {
                 padding: 5vw 3vw;
+            box-shadow: 0 10px 20px 0 #47525d, 0 8px 12px 0 #55aaff74;
                 
             }
             &__card {
@@ -91,6 +101,7 @@
                     width: fit-content;
                     padding: 5px 10px;
                     font-size: 12px;
+                    margin: 5px 0;
                 }
             }
         }
@@ -101,7 +112,9 @@
         margin-bottom: 5vw;
         // margin: auto;
         max-width: 600px;
-
+        @include desktop {
+            margin: unset;
+        }
         &--section {
             background-color: #0d3749;
             padding: 30px 10px;
@@ -113,8 +126,11 @@
             margin-bottom: 30px;
             max-width: 400px;
             margin: auto;
+            
             @include tablet {
                 padding: 5vw 3vw;
+            box-shadow: 0 10px 20px 0 #47525d, 0 8px 12px 0 #55aaff74;
+
             }
             &__card {
                 background-color: #000d16;

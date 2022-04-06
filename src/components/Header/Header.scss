@@ -13,6 +13,9 @@
         }
     }
 }
+#root {
+    background-color: #0d3749
+}
 @import '../../styles/partials/variables';
 @import '../../styles/partials/mixins';
 NavLink:link { text-decoration: underline; }
@@ -190,6 +193,7 @@ NavLink:visited { text-decoration: none; }
         left: unset;
         width: unset;
         height: unset;
+        background-color: unset;
     }
         &--subs {
             padding: 0;
